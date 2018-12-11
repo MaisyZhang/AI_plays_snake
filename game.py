@@ -1,6 +1,7 @@
 import pygame
 import colors as col
 import pickle
+import random
 from Arena import *
 from snake import *
 import time

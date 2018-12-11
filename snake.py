@@ -26,7 +26,7 @@ class snake:
             self.head_x, self.head_y = 40, 40
         self.list.append((self.head_x, self.head_y))
 
-    # draw the snake on the pygame screen
+    # 在pygame上画蛇
     def draw(self, screen, color):
         l = self.block
         for (x, y) in self.list:
@@ -34,7 +34,7 @@ class snake:
             draw.rect(screen, color, (x+3, y+3, l-6, l-6))
         return screen
 
-    # returns true if snake is alive else false
+    # 如果蛇活着就返回True,否则返回False
     def isAlive(self):
         if not self.crash_wall and not self.crash_body:
             return True

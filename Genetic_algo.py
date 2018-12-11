@@ -15,7 +15,7 @@ def progress_bar(curr, total, length):
     print('\r', '#'*filled_bar + '-'*(length - filled_bar), '[{:>7.2%}]'.format(frac), end='')
 
 
-# to run all the snakes of a population
+# 在一代中执行所有的蛇
 def run(snakes, arena):
     i = 1
     count = [0 for _ in range(300)]
@@ -150,9 +150,9 @@ def generate_children(parents, no_of_children):
 
 def main():
     # command line argument parser
-    ap = argparse.ArgumentParser()
-    ap.add_argument('-o', '--output', required=True, help='relative path to save the snakes')
-    args = vars(ap.parse_args())
+    #ap = argparse.ArgumentParser()
+    #ap.add_argument('-o', '--output', required=True, help='relative path to save the snakes')
+    #args = vars(ap.parse_args())
     snakes = [snake.snake(width, height, brainLayer, block_length) for _ in range(population_size)]
     arena = Arena(width, height, block_length)
     top_snakes = []
@@ -166,7 +166,7 @@ def main():
         print('saving the snake')
         top_snakes.append(snakes[0])
         # saving top snakes list as pickle
-        save_top_snakes(top_snakes, args['output'])
+        save_top_snakes(top_snakes, 'saved/test.pickle')
         snakes = create_new_population(snakes)
 
 
